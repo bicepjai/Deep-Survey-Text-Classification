@@ -24,7 +24,7 @@ count_based_models/stage1
 trained_models/
 temp_files/
 submissions/
-
+runs/
 
 
 
@@ -47,7 +47,7 @@ dist/
 downloads/
 eggs/
 .eggs/
-lib/
+#lib/
 lib64/
 parts/
 sdist/

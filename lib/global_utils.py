@@ -20,6 +20,21 @@ import gensim
 import datetime as dt
 from tqdm import tqdm_notebook as tqdm
 
+# import multiprocessing as mp
+# from itertools import repeat, product
+# from functools import partial
+
+# to be able to pickle class methods for multi processing
+# https://stackoverflow.com/questions/27318290/why-can-i-pass-an-instance-method-to-multiprocessing-process-but-not-a-multipro
+
+def _instance_method_alias(obj, arg):
+    """
+    Alias for instance method that allows the method to be called in a
+    multiprocessing pool
+    """
+    return obj.convertSent2WordIds(arg)
+
+
 
 def get_embeddings_from_ft(fasttext_vec_file, dim, vocab_words):
    """
@@ -244,7 +259,6 @@ class GenerateDataset(object):
       # during train test split
       for index in self.data_frame.index:
          document = self.data_frame.Sentences[index]
-
          if unit_dict["divide_document"] == "single_unit": #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~`
 
             # doc units --------------------------------------------------------------
@@ -255,7 +269,18 @@ class GenerateDataset(object):
 
                else: # unit_dict["doc_form"] == "text"
 
+                  # using multiprocess to process each sentence in document and concatenate them to a single sentence
+                  # get_wordid_list = lambda d, setag : [wid for s in d for wid in self.convertSent2WordIds(s, setag)]
+                  # text_word_list = []
+                  # with mp.Pool(processes = 5) as pool:
+                  #    # text_word_list = pool.starmap(get_wordid_list, product(document, [add_start_end_tag]*len(document)))
+                  #    # text_word_list = pool.starmap(get_wordid_list, zip(document, repeat(add_start_end_tag)))
+                  #    text_word_list = pool.map(partial(get_wordid_list, setag=add_start_end_tag), document)
+
+
+                  # without multiprocessing
                   text_word_list = [word_id for sentence in document for word_id in self.convertSent2WordIds(sentence, add_start_end_tag)]
+
                   ids_document.append(text_word_list)
 
             elif unit_dict["doc_unit"] == "chars" or unit_dict["doc_unit"] == "raw_chars":
@@ -374,4 +399,65 @@ class GenerateDataset(object):
 
       ids_document, ids_genes, ids_variations, ids_labels = self.generate_dataset(unit_dict, has_class, add_start_end_tag)
 
+
+# testing ======================================================================================
+
+def test_class():
+   document = [
+         ['beautiful', 'is', 'better', 'than', 'ugly.'],
+         ['explicit', 'is', 'better', 'than', 'implicit.'],
+         ['simple', 'is', 'better', 'than', 'complex.'],
+         ['complex', 'is', 'better', 'than', 'complicated.'],
+         ['flat', 'is', 'better', 'than', 'nested.'],
+         # ['sparse', 'is', 'better', 'than', 'dense.'],
+         # ['readability', 'counts.'],
+         # ['special', 'cases', "aren't", 'special', 'enough', 'to', 'break', 'the', 'rules.'],
+         # ['although', 'practicality', 'beats', 'purity.'],
+         # ['errors', 'should', 'never', 'pass', 'silently.'],
+         # ['unless', 'explicitly', 'silenced.'],
+         # ['in', 'the', 'face', 'of', 'ambiguity,', 'refuse', 'the', 'temptation', 'to', 'guess.'],
+         # ['there', 'should', 'be', 'one--', 'and', 'preferably', 'only', 'one', '--obvious', 'way', 'to', 'do', 'it.'],
+         # ['although', 'that', 'way', 'may', 'not', 'be', 'obvious', 'at', 'first', 'unless', "you're", 'Dutch.'],
+         # ['now', 'is', 'better', 'than', 'never.'], ['Although', 'never', 'is', 'often', 'better', 'than', '*right*', 'now.'],
+         # ['if', 'the', 'implementation', 'is', 'hard', 'to', 'explain,', "it's", 'a', 'bad', 'idea.'],
+         # ['if', 'the', 'implementation', 'is', 'easy', 'to', 'explain,', 'it', 'may', 'be', 'a', 'good', 'idea.'],
+         # ['namespaces', 'are', 'one', 'honking', 'great', 'idea', '--', "let's", 'do', 'more', 'of', 'those!'],
+      ]
+
+   data_dict = {
+      "ID"        : 0,
+      "Gene"      : [["beautiful"]],
+      "Variation" : [["complex", "simple"]],
+      "Class"     : 0,
+      "Sentences" : [document[:]]
+   }
+
+   custom_unit_dict = {
+         "gene_unit"          : "chars",
+         "variation_unit"     : "chars",
+         # text transformed to sentences attribute
+         "doc_unit"           : "raw_chars",
+         "doc_form"           : "text",
+         "divide_document"    : "multiple_unit"
+      }
+
+   df = pd.DataFrame(data=data_dict)
+   corpus = list(set([word for sentence in document for word in sentence]))
+   corpus_wordidx = {word:i for i,word in enumerate(corpus)}
+   corpus_wordidx["<SOSent>"] = len(corpus)
+   corpus_wordidx["<EOSent>"] = len(corpus) + 1
+   corpus_wordidx["<UNK>"]    = len(corpus) + 2
+
+   gen_data = GenerateDataset(df, corpus_wordidx)
+   x_T, x_G, x_V, x_C = gen_data.generate_data(custom_unit_dict, has_class=True, add_start_end_tag=True)
+
+   print("data", df, "\n")
+   print("text",np.array(x_T).shape, x_T[2])
+   print("gene",np.array(x_G).shape, x_G[0])
+   print("variation",np.array(x_V).shape, x_V[0])
+   print("classes",np.array(x_C).shape, x_C[0])
+
+
+# if __name__ == "__main__":
+#    test_class()
 
