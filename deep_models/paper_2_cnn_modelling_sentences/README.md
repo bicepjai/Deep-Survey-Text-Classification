@@ -12,7 +12,7 @@ This network models performance is related to its ability to capture the word an
 
 Folding and K-max pooling layers are not readily available and has to be created using keras functional apis. Keras model summary is also presented below for reference.
 
-
+```
 ____________________________________________________________________________________________________
 Layer (type)                     Output Shape          Param #     Connected to
 ====================================================================================================
@@ -48,3 +48,4 @@ Total params: 70,878,569
 Trainable params: 70,878,569
 Non-trainable params: 0
 ____________________________________________________________________________________________________
+```

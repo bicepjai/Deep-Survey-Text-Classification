@@ -11,6 +11,7 @@ The paper presents several variants of the model such as
 
 Keras model summary is also presented below for reference.
 
+```
 _________________________________________________________________
 Layer (type)                 Output Shape              Param #
 =================================================================
@@ -42,3 +43,4 @@ Total params: 71,187,977
 Trainable params: 71,187,977
 Non-trainable params: 0
 _________________________________________________________________
+```
