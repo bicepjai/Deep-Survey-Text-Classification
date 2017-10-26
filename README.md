@@ -23,6 +23,7 @@ Details regarding the data used can be found  [here](https://github.com/bicepjai
 
 This project is completed and now the write is in the process. It can be viewed [here](https://docs.google.com/document/d/1zAh2lUjweKR8o5OZkv-48NWMVW_Pvvy5O953A-9KcNM/edit?usp=sharing). The papers explored in this project
 
-1. [Convolutional Neural Networks for Sentence Classification, Yoon Kim (2014)](https://github.com/bicepjai/Deep-Survey-Text-Classification/tree/master/deep_models/paper_1_cnn_modelling_sentences)
+1. [Convolutional Neural Networks for Sentence Classification, Yoon Kim (2014)](https://github.com/bicepjai/Deep-Survey-Text-Classification/tree/master/deep_models/paper_1_cnn_sentence_classification)
+2. [A Convolutional Neural Network for Modelling Sentences, Nal Kalchbrenner, Edward Grefenstette, Phil Blunsom (2014)](https://github.com/bicepjai/Deep-Survey-Text-Classification/tree/master/deep_models/paper_2_cnn_modelling_sentences)
+3. more paper ...
 
-2.
