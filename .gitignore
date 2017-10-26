@@ -15,8 +15,8 @@ tb_graphs/
 
 data_prep/external
 data_prep/view_wvs_tb
-data_prep/processed
-data_prep/dataset
+data_prep/processed/stage*
+data_prep/dataset/stage*
 data_prep/data_preprocess_stage2.ipynb
 
 paper_0_doc2vec/
