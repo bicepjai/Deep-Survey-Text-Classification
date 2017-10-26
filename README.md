@@ -25,5 +25,5 @@ This project is completed and now the write is in the process. It can be viewed 
 
 1. [Convolutional Neural Networks for Sentence Classification, Yoon Kim (2014)](https://github.com/bicepjai/Deep-Survey-Text-Classification/tree/master/deep_models/paper_1_cnn_sentence_classification)
 2. [A Convolutional Neural Network for Modelling Sentences, Nal Kalchbrenner, Edward Grefenstette, Phil Blunsom (2014)](https://github.com/bicepjai/Deep-Survey-Text-Classification/tree/master/deep_models/paper_2_cnn_modelling_sentences)
-3. more paper ...
+3. [Medical Text Classification using Convolutional Neural Networks, Mark Hughes, Irene Li, Spyros Kotoulas, Toyotaro Suzumura (2017)](https://github.com/bicepjai/Deep-Survey-Text-Classification/tree/master/deep_models/paper_3_medical_cnn)
 
