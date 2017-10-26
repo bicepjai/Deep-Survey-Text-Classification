@@ -1,3 +1,35 @@
+# custom ============================================================
+lectures/
+
+*.zip
+*.7z
+*.pdf
+*.tsv
+*.npz
+*.mat
+*.bin
+*.hdf5
+
+stage2/
+tb_graphs/
+
+data_prep/external
+data_prep/view_wvs_tb
+data_prep/processed
+data_prep/dataset
+data_prep/data_preprocess_stage2.ipynb
+
+paper_0_doc2vec/
+count_based_models/stage1
+trained_models/
+temp_files/
+submissions/
+
+
+
+
+# python ============================================================
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
