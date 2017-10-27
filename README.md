@@ -6,7 +6,7 @@ This is a survey on deep learning models for text classification and will be upd
 Natural Language Processing tasks ( part-of-speech tagging, chunking, named entity recognition, text classification, etc .) has gone through tremendous amount of research over decades. Text Classification has been the most competed NLP task in kaggle and other similar competitions. Count based models are being phased out with new deep learning models emerging almost every month. This project is an attempt to survey most of the neural based models for text classification task. Models selected, based on CNN and RNN, are explained with code (keras and tensorflow) and block diagrams. The models are evaluated on one of the  kaggle competition medical dataset.
 
 Update:
-While training non stop for 2 weeks and power issues in my areas burned my motherboard. By the time i had to do 2 RMAs with ASROCK and got the system up and running, the competition was over :( but still i learned a lot.
+Non stop training and power issues in my geographic location burned my motherboard. By the time i had to do 2 RMAs with ASROCK and get the system up and running, the competition was over :( but still i learned a lot.
 
 ## Project setup
 
@@ -43,7 +43,6 @@ This project is completed and now the write up is in the process. It can be view
 9. [Deep Sentence Embedding Using Long Short-Term Memory Networks: Analysis and Application to Information Retrieval, Hamid Palangi, Li Deng, Yelong Shen, Jianfeng Gao, Xiaodong He, Jianshu Chen, Xinying Song, Rabab Ward](https://github.com/bicepjai/Deep-Survey-Text-Classification/tree/master/deep_models/paper_09_dse_lstm)
 10. [Multiplicative LSTM for sequence modelling, Ben Krause, Liang Lu, Iain Murray, Steve Renals (2016)](https://github.com/bicepjai/Deep-Survey-Text-Classification/tree/master/deep_models/paper_10_mul_lstm)
 11. [Hierarchical Attention Networks for Document Classification, Zichao Yang, Diyi Yang, Chris Dyer, Xiaodong He, Alex Smola, Eduard Hovy (2016)](https://github.com/bicepjai/Deep-Survey-Text-Classification/tree/master/deep_models/paper_11_hier_att_net)
-12. [Recurrent Convolutional Neural Networks for Text Classification](https://github.com/bicepjai/Deep-Survey-Text-Classification/tree/master/deep_models/paper_x12_rcnn)
-13. []()
+12. [Recurrent Convolutional Neural Networks for Text Classification, Siwei Lai, Liheng Xu, Kang Liu, Jun Zhao (2015)](https://github.com/bicepjai/Deep-Survey-Text-Classification/tree/master/deep_models/paper_x12_rcnn)
 14. more paper-implementations on the way ...
 
