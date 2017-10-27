@@ -3,8 +3,10 @@
 This is a survey on deep learning models for text classification and will be updated frequently with testing and evaluation on different datasets.
 
 
-Natural Language Processing tasks ( part-of-speech tagging, chunking, named entity recognition, text classification, etc .) has gone through tremendous amount of research over decades. Text Classification has been the most competed NLP task in kaggle and other similar competitions. Count based models are being phased out with new deep learning models emerging almost every month. This project is an attempt to survey most of the neural based models for text classification task. Models selected, based on CNN and RNN, are explained with code (keras and tensorflow) and block diagrams. The models are evaluated on one of the active kaggle competition medical dataset.
+Natural Language Processing tasks ( part-of-speech tagging, chunking, named entity recognition, text classification, etc .) has gone through tremendous amount of research over decades. Text Classification has been the most competed NLP task in kaggle and other similar competitions. Count based models are being phased out with new deep learning models emerging almost every month. This project is an attempt to survey most of the neural based models for text classification task. Models selected, based on CNN and RNN, are explained with code (keras and tensorflow) and block diagrams. The models are evaluated on one of the  kaggle competition medical dataset.
 
+Update:
+While training non stop for 2 weeks and power issues in my areas burned my motherboard. By the time i had to do 2 RMAs with ASROCK and got the system up and running, the competition was over :( but still i learned a lot.
 
 ## Project setup
 
@@ -14,6 +16,13 @@ Natural Language Processing tasks ( part-of-speech tagging, chunking, named enti
 4. make sure jupyter notebooks work and I have some extensions enabled for eas of view and navigation
 
 Now we should be ready to run this project. The details regarding the machine used for training can be found [here](https://bicepjai.github.io/machine-learning/2015/05/25/machine-learning-rig.html)
+
+Version Reference on some important packages used
+
+1. Keras==2.0.8
+2. tensorflow-gpu==1.3.0
+3. tensorflow-tensorboard==0.1.8
+
 
 ## Data
 
@@ -32,4 +41,7 @@ This project is completed and now the write is in the process. It can be viewed 
 7. [MGNC-CNN: A Simple Approach to Exploiting Multiple Word Embeddings for Sentence Classification Ye Zhang, Stephen Roller, Byron Wallace (2016)](https://github.com/bicepjai/Deep-Survey-Text-Classification/tree/master/deep_models/paper_7_mgnccnn)
 8. [Generative and Discriminative Text Classification with Recurrent Neural Networks, Dani Yogatama, Chris Dyer, Wang Ling, Phil Blunsom (2017)](https://github.com/bicepjai/Deep-Survey-Text-Classification/tree/master/deep_models/paper_8_lstm)
 9. [Deep Sentence Embedding Using Long Short-Term Memory Networks: Analysis and Application to Information Retrieval, Hamid Palangi, Li Deng, Yelong Shen, Jianfeng Gao, Xiaodong He, Jianshu Chen, Xinying Song, Rabab Ward](https://github.com/bicepjai/Deep-Survey-Text-Classification/tree/master/deep_models/paper_9_dse_lstm)
-10. more paper-implementations on the way ...
+10. [Multiplicative LSTM for sequence modelling, Ben Krause, Liang Lu, Iain Murray, Steve Renals (2016)](https://github.com/bicepjai/Deep-Survey-Text-Classification/tree/master/deep_models/paper_x10_mul_lstm)
+11. [Hierarchical Attention Networks for Document Classification, Zichao Yang, Diyi Yang, Chris Dyer, Xiaodong He, Alex Smola, Eduard Hovy (2016)](https://github.com/bicepjai/Deep-Survey-Text-Classification/tree/master/deep_models/paper_x11_hier_att_net)
+12. more paper-implementations on the way ...
+
