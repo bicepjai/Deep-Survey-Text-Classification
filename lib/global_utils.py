@@ -108,6 +108,7 @@ class GenerateDataset(object):
          "variation_unit" : "words",
          "doc_unit"       : "words",
          "doc_form"       : "text",
+         "doc_cntx_dir"   : "forward",
          "divide_document": "single_unit"
       }
 
@@ -242,13 +243,19 @@ class GenerateDataset(object):
       unit_dict contains these 5 keys that can have
       gene_unit      can be ["words", "chars", "raw_chars"]
       variation_unit can be ["words", "chars", "raw_chars"]
-      doc_unit       can be ["words", "chars", "raw_chars"]
+      doc_unit       can be ["words", "word_list", chars", "raw_chars"]
       doc_form       can be ["sentences", "text"]
+      doc_cntx_dir   can be ["forward", "backward"]
       divide_document can be ["single_unit", "multiple_units"]
 
       """
       if not unit_dict:
          unit_dict = self.default_unit_dict
+
+      try:
+         unit_dict["doc_cntx_dir"]
+      except KeyError as e:
+         unit_dict["doc_cntx_dir"] = "forward"
 
       ids_document   = []
       ids_labels     = []
@@ -281,8 +288,15 @@ class GenerateDataset(object):
                   # without multiprocessing
                   if unit_dict["doc_unit"] == "words":
                      text_word_list = [word_id for sentence in document for word_id in self.convertSent2WordIds(sentence, add_start_end_tag)]
-                  else: # unit_dict["doc_unit"] == "words": sentence form a list
+
+                     if unit_dict["doc_cntx_dir"] == "backward":
+                        text_word_list = text_word_list[::-1]
+
+                  else: # unit_dict["doc_unit"] == "word_list": sentence form a list
                      text_word_list = [self.convertSent2WordIds(sentence, add_start_end_tag) for sentence in document]
+
+                     if unit_dict["doc_cntx_dir"] == "backward":
+                        text_word_list = [self.convertSent2WordIds(sentence, add_start_end_tag)[::-1] for sentence in document]
 
                   ids_document.append(text_word_list)
 
@@ -329,7 +343,12 @@ class GenerateDataset(object):
                   # unit_dict["doc_form"] == "text"
 
                   try:
-                     ids_document.append(self.convertSent2WordIds(sentence, add_start_end_tag))
+                     sentence_list = self.convertSent2WordIds(sentence, add_start_end_tag)
+                     if unit_dict["doc_cntx_dir"] == "backward":
+                        text_word_list = self.convertSent2WordIds(sentence, add_start_end_tag)[::-1]
+
+                     ids_document.append(sentence_list)
+
                   except ValueError as e:
                      print(e)
                      print (index)
@@ -366,7 +385,8 @@ class GenerateDataset(object):
 
 
 
-   def placeholder_function(self, unit_dict=None, limit_dict=None, has_class=False, add_start_end_tag=False):
+   def placeholder_function(self, unit_dict=None, limit_dict=None,
+      has_class=False, add_start_end_tag=False):
       """
       dataframe expects to have Sentences, Variations, Genes, Class(has_class)
 
@@ -439,13 +459,14 @@ def test_class():
          "gene_unit"          : "words",
          "variation_unit"     : "words",
          # text transformed to sentences attribute
-         "doc_unit"           : "words",
+         "doc_unit"           : "word_list",
          "doc_form"           : "text",
+         "doc_cntx_dir"       : "forward",
          "divide_document"    : "single_unit"
       }
 
    df = pd.DataFrame(data=data_dict)
-   corpus = list(set([word for sentence in document for word in sentence]))
+   corpus = sorted(list(set([word for sentence in document for word in sentence])))
    corpus_wordidx = {word:i for i,word in enumerate(corpus)}
    corpus_wordidx["<SOSent>"] = len(corpus)
    corpus_wordidx["<EOSent>"] = len(corpus) + 1
@@ -454,13 +475,15 @@ def test_class():
    gen_data = GenerateDataset(df, corpus_wordidx)
    x_T, x_G, x_V, x_C = gen_data.generate_data(custom_unit_dict, has_class=True, add_start_end_tag=True)
 
-   print("data", df, "\n")
-   print("text",np.array(x_T).shape, x_T[0])
-   print("gene",np.array(x_G).shape, x_G[0])
-   print("variation",np.array(x_V).shape, x_V[0])
-   print("classes",np.array(x_C).shape, x_C[0])
+   print("data", df.Sentences[0], "\n")
+   print(corpus_wordidx)
+   index = 0
+   print("text",np.array(x_T).shape, x_T[index])
+   print("gene",np.array(x_G).shape, x_G[index])
+   print("variation",np.array(x_V).shape, x_V[index])
+   print("classes",np.array(x_C).shape, x_C[index])
 
 
-# if __name__ == "__main__":
-#    test_class()
+if __name__ == "__main__":
+   test_class()
 
