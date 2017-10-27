@@ -1,4 +1,4 @@
-# [Convolutional Neural Networks for Sentence Classification](https://arxiv.org/abs/1408.5882), Yoon Kim
+# [A Convolutional Neural Network for Modelling Sentences](https://arxiv.org/abs/1404.2188)
 
 Kalchbrenner et al (2014) presented Dynamic Convolutional Neural Network for semantic modelling of sentences. This model handles sentences of varying length and uses dynamic k-max pooling over linear sequences. This helps the model induce a feature graph that is capable of capturing short and long range relations. K-max pooling is difference from local max pooling and outputs k max values from the necessary dimension of the previous convolutional layer. For smooth extraction of higher order features, paper introduces Dynamic k-max pooling where the k in the k-max pooling operation is a function of the length of the input sentences.
 
