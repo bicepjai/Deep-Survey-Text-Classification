@@ -262,7 +262,7 @@ class GenerateDataset(object):
          if unit_dict["divide_document"] == "single_unit": #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~`
 
             # doc units --------------------------------------------------------------
-            if unit_dict["doc_unit"] == "words":
+            if unit_dict["doc_unit"] == "words" or unit_dict["doc_unit"] == "word_list":
 
                if unit_dict["doc_form"] == "sentences":
                   ids_document.append(self.convertDoc2Sent2WordIds(document, add_start_end_tag))
@@ -279,7 +279,10 @@ class GenerateDataset(object):
 
 
                   # without multiprocessing
-                  text_word_list = [word_id for sentence in document for word_id in self.convertSent2WordIds(sentence, add_start_end_tag)]
+                  if unit_dict["doc_unit"] == "words":
+                     text_word_list = [word_id for sentence in document for word_id in self.convertSent2WordIds(sentence, add_start_end_tag)]
+                  else: # unit_dict["doc_unit"] == "words": sentence form a list
+                     text_word_list = [self.convertSent2WordIds(sentence, add_start_end_tag) for sentence in document]
 
                   ids_document.append(text_word_list)
 
@@ -433,12 +436,12 @@ def test_class():
    }
 
    custom_unit_dict = {
-         "gene_unit"          : "chars",
-         "variation_unit"     : "chars",
+         "gene_unit"          : "words",
+         "variation_unit"     : "words",
          # text transformed to sentences attribute
-         "doc_unit"           : "raw_chars",
+         "doc_unit"           : "words",
          "doc_form"           : "text",
-         "divide_document"    : "multiple_unit"
+         "divide_document"    : "single_unit"
       }
 
    df = pd.DataFrame(data=data_dict)
@@ -452,7 +455,7 @@ def test_class():
    x_T, x_G, x_V, x_C = gen_data.generate_data(custom_unit_dict, has_class=True, add_start_end_tag=True)
 
    print("data", df, "\n")
-   print("text",np.array(x_T).shape, x_T[2])
+   print("text",np.array(x_T).shape, x_T[0])
    print("gene",np.array(x_G).shape, x_G[0])
    print("variation",np.array(x_V).shape, x_V[0])
    print("classes",np.array(x_C).shape, x_C[0])
