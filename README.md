@@ -31,4 +31,5 @@ This project is completed and now the write is in the process. It can be viewed 
 6. [Multichannel Variable-Size Convolution for Sentence Classification, Wenpeng Yin, Hinrich Schütze (2016)](https://github.com/bicepjai/Deep-Survey-Text-Classification/tree/master/deep_models/paper_6_mvcnn)
 7. [MGNC-CNN: A Simple Approach to Exploiting Multiple Word Embeddings for Sentence Classification Ye Zhang, Stephen Roller, Byron Wallace (2016)](https://github.com/bicepjai/Deep-Survey-Text-Classification/tree/master/deep_models/paper_7_mgnccnn)
 8. [Generative and Discriminative Text Classification with Recurrent Neural Networks, Dani Yogatama, Chris Dyer, Wang Ling, Phil Blunsom (2017)](https://github.com/bicepjai/Deep-Survey-Text-Classification/tree/master/deep_models/paper_8_lstm)
-9. more paper-implementations on the way ...
+9. [Deep Sentence Embedding Using Long Short-Term Memory Networks: Analysis and Application to Information Retrieval, Hamid Palangi, Li Deng, Yelong Shen, Jianfeng Gao, Xiaodong He, Jianshu Chen, Xinying Song, Rabab Ward](https://github.com/bicepjai/Deep-Survey-Text-Classification/tree/master/deep_models/paper_9_dse_lstm)
+10. more paper-implementations on the way ...
