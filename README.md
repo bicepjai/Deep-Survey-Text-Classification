@@ -29,5 +29,5 @@ This project is completed and now the write is in the process. It can be viewed 
 4. [Very Deep Convolutional Networks for Text Classification, Alexis Conneau, Holger Schwenk, Loïc Barrault, Yann Lecun (2016)](https://github.com/bicepjai/Deep-Survey-Text-Classification/tree/master/deep_models/paper_4_vdcnn)
 5. [Rationale-Augmented Convolutional Neural Networks for Text Classification, Ye Zhang, Iain Marshall, Byron C. Wallace (2016)](https://github.com/bicepjai/Deep-Survey-Text-Classification/tree/master/deep_models/paper_5_racnn)
 6. [Multichannel Variable-Size Convolution for Sentence Classification, Wenpeng Yin, Hinrich Schütze (2016)](https://github.com/bicepjai/Deep-Survey-Text-Classification/tree/master/deep_models/paper_6_mvcnn)
-7.[MGNC-CNN: A Simple Approach to Exploiting Multiple Word Embeddings for Sentence Classification Ye Zhang, Stephen Roller, Byron Wallace (2016)](https://github.com/bicepjai/Deep-Survey-Text-Classification/tree/master/deep_models/paper_7_mgnccnn)
+7. [MGNC-CNN: A Simple Approach to Exploiting Multiple Word Embeddings for Sentence Classification Ye Zhang, Stephen Roller, Byron Wallace (2016)](https://github.com/bicepjai/Deep-Survey-Text-Classification/tree/master/deep_models/paper_7_mgnccnn)
 8. more paper-implementations on the way ...
