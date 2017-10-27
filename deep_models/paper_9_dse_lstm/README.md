@@ -1,4 +1,4 @@
-# [Deep Sentence Embedding Using Long Short-Term Memory Networks: Analysis and Application to Information Retrieval]()
+# [Deep Sentence Embedding Using Long Short-Term Memory Networks: Analysis and Application to Information Retrieval](https://arxiv.org/abs/1502.06922)
 
 Palangi et al proposed LSTM-RNN for text classification. The model has shown to perform better than Paragraph Vectors for document/sentence embedding. As the model reads to the end of the sentence, the topic activation accumulate and the hidden state representation at the last word encodes the rich contextual information of the entire sentence. LSTM-RNN are effective against noise and can be robust in scenarios such as when every word in the document is not equally important and only salient words needs to be remembered using limited memory.
 
