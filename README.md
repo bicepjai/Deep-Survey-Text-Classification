@@ -28,4 +28,5 @@ This project is completed and now the write is in the process. It can be viewed 
 3. [Medical Text Classification using Convolutional Neural Networks, Mark Hughes, Irene Li, Spyros Kotoulas, Toyotaro Suzumura (2017)](https://github.com/bicepjai/Deep-Survey-Text-Classification/tree/master/deep_models/paper_3_medical_cnn)
 4. [Very Deep Convolutional Networks for Text Classification, Alexis Conneau, Holger Schwenk, Loïc Barrault, Yann Lecun (2016)](https://github.com/bicepjai/Deep-Survey-Text-Classification/tree/master/deep_models/paper_4_vdcnn)
 5. [Rationale-Augmented Convolutional Neural Networks for Text Classification, Ye Zhang, Iain Marshall, Byron C. Wallace (2016)](https://github.com/bicepjai/Deep-Survey-Text-Classification/tree/master/deep_models/paper_5_racnn)
-6. more papers ...
+6. [Multichannel Variable-Size Convolution for Sentence Classification, Wenpeng Yin, Hinrich Schütze (2016)](https://github.com/bicepjai/Deep-Survey-Text-Classification/tree/master/deep_models/paper_6_mvcnn)
+7. more papers ...
