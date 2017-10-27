@@ -19,7 +19,7 @@ data_prep/processed/stage*
 data_prep/dataset/stage*
 data_prep/data_preprocess_stage2.ipynb
 
-paper_0_doc2vec/
+paper_00_doc2vec/
 count_based_models/stage1
 trained_models/
 temp_files/
