@@ -43,6 +43,7 @@ This project is completed and now the write up is in the process. It can be view
 9. [Deep Sentence Embedding Using Long Short-Term Memory Networks: Analysis and Application to Information Retrieval, Hamid Palangi, Li Deng, Yelong Shen, Jianfeng Gao, Xiaodong He, Jianshu Chen, Xinying Song, Rabab Ward](https://github.com/bicepjai/Deep-Survey-Text-Classification/tree/master/deep_models/paper_09_dse_lstm)
 10. [Multiplicative LSTM for sequence modelling, Ben Krause, Liang Lu, Iain Murray, Steve Renals (2016)](https://github.com/bicepjai/Deep-Survey-Text-Classification/tree/master/deep_models/paper_10_mul_lstm)
 11. [Hierarchical Attention Networks for Document Classification, Zichao Yang, Diyi Yang, Chris Dyer, Xiaodong He, Alex Smola, Eduard Hovy (2016)](https://github.com/bicepjai/Deep-Survey-Text-Classification/tree/master/deep_models/paper_11_hier_att_net)
-12. [Recurrent Convolutional Neural Networks for Text Classification, Siwei Lai, Liheng Xu, Kang Liu, Jun Zhao (2015)](https://github.com/bicepjai/Deep-Survey-Text-Classification/tree/master/deep_models/paper_x12_rcnn)
+12. [Recurrent Convolutional Neural Networks for Text Classification, Siwei Lai, Liheng Xu, Kang Liu, Jun Zhao (2015)](https://github.com/bicepjai/Deep-Survey-Text-Classification/tree/master/deep_models/paper_12_rcnn)
+13. [Ensemble Application of Convolutional and Recurrent Neural Networks for Multi-label Text Categorization, Guibin Chen1, Deheng Ye1, Zhenchang Xing2, Jieshan Chen3, Erik Cambria1 (2017)](https://github.com/bicepjai/Deep-Survey-Text-Classification/tree/master/deep_models/paper_13_ensemble_cnn_rnn)
 14. more paper-implementations on the way ...
 
