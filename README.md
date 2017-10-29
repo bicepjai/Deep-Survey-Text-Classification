@@ -10,12 +10,17 @@ Non stop training and power issues in my geographic location burned my motherboa
 
 ## Project setup
 
-1. Download and install anaconda3 and create a virtual environment using `conda create`
-2. Install `pip` using `conda` from the virtual anaconda3 environment (pip installing in current env)
-3. Use this [requirements](https://github.com/bicepjai/Deep-Survey-Text-Classification/blob/master/requirements.txt) file for installing dependencies using pip
-4. make sure jupyter notebooks work and I have some extensions enabled for eas of view and navigation
+1. Download and install anaconda3 say at `~/Programs/anaconda3`
+2. create a virtual environment using `cd ~/Programs/anaconda3 && mkdir envs` and `cd envs && ../bin/conda create -p ~/Programs/anaconda3/envs/dsotc-c3 python=3.6 anaconda`.
+3. Do activate the environment `source /home/bicepjai/Programs/anaconda3/envs/dsotc-c3/bin/activate dsotc-c3`
+4. Install `pip` using `conda install pip`
+5. Execute command `pip install -r requirements.txt` for installing all dependencies
+6. For enabling jupyter extensions `jupyter nbextensions_configurator enable --user`
+7. For enabling configuration options `jupyter contrib nbextension install --user`
+8. Some extensions to enable `Collapsible Headings`, `ExecuteTime`, `Table of Contents`
 
-Now we should be ready to run this project. The details regarding the machine used for training can be found [here](https://bicepjai.github.io/machine-learning/2015/05/25/machine-learning-rig.html)
+
+Now we should be ready to run this project and perform reproducible research. The details regarding the machine used for training can be found [here](https://bicepjai.github.io/machine-learning/2015/05/25/machine-learning-rig.html)
 
 Version Reference on some important packages used
 
@@ -50,4 +55,3 @@ This project is completed and now the write up is in the process. It can be view
 16. [AC-BLSTM: Asymmetric Convolutional Bidirectional LSTM Networks for Text Classification, Depeng Liang, Yongdong Zhang (2016)](https://github.com/bicepjai/Deep-Survey-Text-Classification/tree/master/deep_models/paper_16_ac_blstm)
 17. [Character-Aware Neural Language Models, Yoon Kim, Yacine Jernite, David Sontag, Alexander M. Rush (2015)](https://github.com/bicepjai/Deep-Survey-Text-Classification/tree/master/deep_models/paper_17_char_aware_nlm)
 18. more paper-implementations on the way ...
-
