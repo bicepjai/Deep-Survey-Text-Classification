@@ -305,8 +305,8 @@ class GenerateDataset(object):
                if unit_dict["doc_form"] == "sentences":
 
                   for sentence in document:
-                     ids_document.append(self.convertDoc2Sent2Word2Char2Ids(document, add_start_end_tag,
-                                          doc_form="sentences", unit=unit_dict["doc_unit"]))
+                     ids_document.append(self.convertDoc2Sent2Word2Char2Ids(document,
+                        doc_form=unit_dict["doc_form"], unit=unit_dict["doc_unit"], add_start_end_tag=add_start_end_tag))
 
                else: # unit_dict["doc_form"] == "text"
                   text_char_list = [word_as_char_list_id for sentence in document for word_as_char_list_id in self.convertSent2Word2Char2Ids(sentence, add_start_end_tag, unit=unit_dict["doc_unit"])]
@@ -456,12 +456,12 @@ def test_class():
    }
 
    custom_unit_dict = {
-         "gene_unit"          : "words",
-         "variation_unit"     : "words",
+         "gene_unit"          : "raw_chars",
+         "variation_unit"     : "raw_chars",
          # text transformed to sentences attribute
-         "doc_unit"           : "word_list",
-         "doc_form"           : "text",
-         "doc_cntx_dir"       : "forward",
+         "doc_unit"           : "raw_chars",
+         "doc_form"           : "sentences",
+         # "doc_cntx_dir"       : "forward",
          "divide_document"    : "single_unit"
       }
 
