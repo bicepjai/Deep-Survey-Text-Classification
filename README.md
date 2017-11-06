@@ -13,7 +13,7 @@ Non stop training and power issues in my geographic location burned my motherboa
 1. Download and install anaconda3 say at `~/Programs/anaconda3`
 2. create a virtual environment using `cd ~/Programs/anaconda3 && mkdir envs` and `cd envs && ../bin/conda create -p ~/Programs/anaconda3/envs/dsotc-c3 python=3.6 anaconda`.
 3. Do activate the environment `source /home/bicepjai/Programs/anaconda3/envs/dsotc-c3/bin/activate dsotc-c3`
-4. Install `pip` using `conda install pip`
+4. Install `~/Programs/anaconda3/envs/dsotc-c3/bin/pip` using `conda install pip` (anaconda has issues with using pip so use the fill path)
 5. Execute command `pip install -r requirements.txt` for installing all dependencies
 6. For enabling jupyter extensions `jupyter nbextensions_configurator enable --user`
 7. For enabling configuration options `jupyter contrib nbextension install --user`
